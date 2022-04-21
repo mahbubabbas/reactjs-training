@@ -8,8 +8,10 @@
 
     `npm install -g create-react-app`
 
-3.  Install webpack
+3.  Install webpack 
+
     `npm install webpack webpack-dev-server webpack-cli --save`
 
 4.  Install Babel
+
     `npm install babel-core babel-loader babel-preset-env babel-preset-react babel-webpack-plugin --save-dev`
