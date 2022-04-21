@@ -3,6 +3,7 @@
 1.  Install Nodejs latest version from https://nodejs.org/en
 
 2.  Install React and React Cli
+
     `npm install react react-dom --save`
 
     `npm install -g create-react-app`
