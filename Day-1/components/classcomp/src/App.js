@@ -1,27 +1,5 @@
 import React, { Component } from "react"
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      data: [
-        { 'name': 'Mahboob' },
-        { 'name': 'Mahboob Shaikh' },
-        { 'name': 'Mahboob Abbas' },
-      ]
-    }
-  }
-
-  render() {
-    return (
-      <div>
-        <StudentHeader />
-        {this.state.data.map((item) => <StudentList data={item} />)}
-      </div>
-    )
-  }
-}
-
 class StudentHeader extends Component {
   render() {
     return (
@@ -40,5 +18,31 @@ class StudentList extends Component {
   }
 }
 
+
+class App extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      data: [
+        { 'name': 'Mahboob' },
+        { 'name': 'Mahboob Shaikh' },
+        { 'name': 'Mahboob Abbas' },
+      ]
+    }
+
+  }
+
+  render() {
+    return (
+      <div>
+        <StudentHeader />
+        { 
+          this.state.data.map((student) => <StudentList data={student} />) 
+        }
+      </div>
+    )
+  }
+}
 
 export default App

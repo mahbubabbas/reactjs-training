@@ -20,6 +20,7 @@ class App extends Component{
   render() {
     return(
       <form onSubmit={this.handleUpdate}>
+        
         <label>First Name:
           <input type='text' ref={this.fname}/>
         </label>
@@ -29,6 +30,7 @@ class App extends Component{
         </label>
 
         <button type="submit">Submit</button>
+        
       </form>
     )
   }

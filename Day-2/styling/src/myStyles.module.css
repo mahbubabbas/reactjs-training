@@ -1,0 +1,10 @@
+.style1 {
+  font-size: 100px;
+  color: red;
+}
+
+.style2 {
+  font-size: 50px;
+  color: brown;
+  font-style: italic;
+}

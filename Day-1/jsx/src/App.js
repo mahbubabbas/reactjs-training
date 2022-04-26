@@ -25,9 +25,7 @@ function App1() {
 //control flow
 
 class App extends Component {
-  
   render() {
-    
     const elem = <div>Hello world</div>
 
     let warning = 'warning'
@@ -35,10 +33,13 @@ class App extends Component {
       fontSize: 80,
       color: 'red'
     }
+    
     return (
       <div>
         <p data-myAttr="test">
-          <h1 style={mystyle}  className={warning}>This is a test using class</h1>
+          <h1 style={mystyle}  className={warning}>
+            This is a test using class
+          </h1>
           {/* this is a comment inside jsx */}
         </p>
       </div>

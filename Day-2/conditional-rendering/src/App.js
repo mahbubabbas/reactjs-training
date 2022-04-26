@@ -33,14 +33,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SignUp isLoggedIn={false} />
         <Example data='1'/>
       </div>
     )
   }
 
 }
-
 
 export default App
 

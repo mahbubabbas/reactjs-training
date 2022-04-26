@@ -1,15 +1,5 @@
 import React, { Component } from "react"
 
-function App() {
-  return (
-    <div>
-      <Foo1 />
-      <Foo2 />
-      <Foo3 />
-    </div>
-  )
-}
-
 function Foo1() {
   return (
     <h1>
@@ -34,6 +24,16 @@ class Foo3 extends Component {
       </h3>
     )
   }
+}
+
+function App() {
+  return (
+    <div>
+      <Foo1 />
+      <Foo2 />
+      <Foo3 />
+    </div>
+  )
 }
 
 export default App
