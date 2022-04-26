@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+  width: 100%;
+}
+
+table, td, th {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+td:nth-child(1) {
+  text-align: left;
+}
+
+td:nth-child(2) {
+  text-align: center;
+}
