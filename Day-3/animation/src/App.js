@@ -23,6 +23,7 @@ class TodoList extends React.Component {
   }
 
   render() {
+
     const items = this.state.items.map((item, i) => (
       <div key={i} onClick={() => this.handleRemove(i)}>
         {item}
@@ -34,9 +35,10 @@ class TodoList extends React.Component {
         <button onClick={this.handleAdd}>Add Item</button>
         <TransitionGroup
           transitionName="example"
-          transitionEnterTimeout={1500}
-          transitionLeaveTimeout={300}>
+          transitionEnterTimeout={15000}
+          transitionLeaveTimeout={3000}>
           {items}
+
         </TransitionGroup>
       </div>
     )

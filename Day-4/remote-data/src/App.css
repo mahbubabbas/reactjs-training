@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+
+table.myTable,
+table.myTable td {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 5px
+}

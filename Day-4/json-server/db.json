@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "Mahbub Abbas"
+    },
+    {
+      "id": 2,
+      "title": "New server",
+      "author": "Mahbub Abbas"
+    },
+    {
+      "id": "4",
+      "title": "hhh",
+      "author": "hhh"
+    },
+    {
+      "id": "3",
+      "title": "skfskdf",
+      "author": "skdfksd"
+    },
+    {
+      "id": "5",
+      "title": "skfk",
+      "author": "dfkdkf"
+    }
+  ]
+}

@@ -34,4 +34,4 @@ function App2() {
 }
 
 
-export default App2
+export default App
