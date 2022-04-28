@@ -3,7 +3,7 @@ import './App.css';
 
 import { Component } from 'react'
 
-const API_URL = 'http://localhost:8000/posts'
+const API_URL = 'http://localhost:8000/students'
 
 class App extends Component {
   constructor() {
@@ -18,9 +18,10 @@ class App extends Component {
       author: ''
     }
 
-    this.fetchData = this.fetchData.bind(this)
     this.fetchAll = this.fetchAll.bind(this)
 
+    this.fetchData = this.fetchData.bind(this)
+    
     this.onChangeId = this.onChangeId.bind(this)
     this.onChangeTitle = this.onChangeTitle.bind(this)
     this.onChangeAuthor = this.onChangeAuthor.bind(this)
@@ -68,13 +69,14 @@ class App extends Component {
   }
 
   fetchAll() {
-    this.setState({ loading: true }, () => {
-      fetch(`${API_URL}`)
-        .then((response) => response.json())
-        .then((json) => {
-          this.setState({ loading: false, data: json })
-        })
+    fetch(`${API_URL}`)
+    .then((response) => response.json())
+    .then((json) => {
+      this.setState({ loading: false, data: json })
     })
+
+    /*this.setState({ loading: true }, () => {
+    })*/
   }
 
   deleteData(id) {
@@ -102,15 +104,21 @@ class App extends Component {
 
         <h1>Remote data</h1>
         {
-          loading ? <p>loading...</p> : <table className='myTable'><tbody>
+          loading ? <p>loading...</p> : <table className='myTable'>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Roll</th>
+              </tr>
+            </thead>
+            <tbody>
             {
               data.map((d) =>
                 <tr key={d.id}>
                   <td>{d.id}</td>
-                  <td>{d.title}</td>
-                  <td>{d.author}</td>
-                  <td>Edit</td>
-                  <td><button onClick={() => this.deleteData(d.id)}>Del</button></td>
+                  <td>{d.name}</td>
+                  <td>{d.roll_no}</td>
                 </tr>
               )
             }

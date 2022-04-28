@@ -31,7 +31,7 @@ function Button(props) {
 class App extends Component {
   render() {
     return(
-      <Toolbar theme='dark'/>
+      <Toolbar theme='light'/>
     )
   }
 }
@@ -73,12 +73,11 @@ function Button(props) {
 class App extends Component {
   render() {
     return(
-      <ThemeContext.Provider value="dark">  
+      <ThemeContext.Provider value="light">  
         <Toolbar />
       </ThemeContext.Provider>
     )
   }
 }
-
 
 export default App

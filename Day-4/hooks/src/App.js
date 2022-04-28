@@ -1,11 +1,31 @@
-import {useEffect, useState} from 'react'
+import {Component, useEffect, useState} from 'react'
+/*
+class App extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      count: 0
+    }
+  }
+
+  incrementCount() {
+    const oldCount  = this.state.count
+    this.setState({count : oldCount + 1})
+  }
+
+}
+*/
 
 function App() {
   const [count, setCount] = useState(0)
   
-  /*useEffect(() => {
+  /*
+  useEffect(() => {
     document.title = `Count value ${count}`
-  })*/
+  })
+  */
+
   useDocumentTitle(count)
 
   return (
