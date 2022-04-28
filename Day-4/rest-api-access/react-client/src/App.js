@@ -2,7 +2,8 @@ import { Component } from "react";
 import './App.css'
 
 //This is our API entry point
-const API_URL = 'https://jsonplaceholder.typicode.com/posts'
+//const API_URL = 'https://jsonplaceholder.typicode.com/posts'
+const API_URL = 'http://localhost:8000/posts'
 
 class App extends Component {
   constructor() {
@@ -48,7 +49,9 @@ class App extends Component {
       },
     })
       .then((response) => response.json())
-      .then((json) => console.log(json))
+      .then((json) => {
+        this.getAllRecords()
+      })
   }
 
   componentDidMount() {
@@ -56,54 +59,73 @@ class App extends Component {
   }
 
   onChangeTitle(e) {
-    this.setState({title: e.target.value})
+    this.setState({ title: e.target.value })
   }
 
   onChangeBody(e) {
-    this.setState({body: e.target.value})
+    this.setState({ body: e.target.value })
   }
 
-  onSubmmit() {
+  deleteRecord(id) {
+    fetch(`${API_URL}/${id}`, {
+      method: 'DELETE',
+    }).then((resp) => {
+      this.setState()
+    })
+  }
+
+  onSubmmit(e) {
     const data = {
       title: this.state.title,
       body: this.state.body,
-      userId: 1
     }
-
-    console.log(data)
-
+    
     this.insertRecord(data)
+    e.preventDefault()
   }
-  
+
   render() {
     const { posts } = this.state
 
     return (
       <div>
-        
-        <input onChange={this.onChangeTitle}/>
-        <input onChange={this.onChangeBody}/>
-        <button onClick={this.onSubmmit}>Submit</button>
+        <form onSubmit={this.onSubmmit}>
+          <input onChange={this.onChangeTitle} />
+          <input onChange={this.onChangeBody} />
+          <button type="submit">Submit</button>
+        </form>
 
-        <h1>All records</h1>              
+        <h1>All records</h1>
+        
         <table className="myTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Body</th>
+              <th></th>
+            </tr>
+          </thead>
           <tbody>
-            <DisplayTable posts={posts}/>
+            <DisplayTable posts={posts} deleteRecord={this.deleteRecord} />
           </tbody>
         </table>
+
       </div>
     )
   }
 }
 
 function DisplayTable(props) {
-  return(
+  return (
     props.posts.map((post) => {
       return <tr key={post.id}>
         <td>{post.id}</td>
         <td>{post.title}</td>
         <td>{post.body}</td>
-        <td>{post.userId}</td>
+        <td>
+          <button onClick={() => props.deleteRecord(post.id)}>Delete</button>
+        </td>
       </tr>
     })
   )

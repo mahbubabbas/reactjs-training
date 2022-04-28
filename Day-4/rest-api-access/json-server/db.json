@@ -1,14 +1,9 @@
 {
-  "students": [
+  "posts": [
     {
-      "id": 1,
-      "name": "Mahbub Abbas",
-      "roll_no": "1"
-    },
-    {
-      "id": 2,
-      "name": "Abcd ",
-      "roll_no": "2"
+      "title": "asdkksad ",
+      "body": "sdsjdfjsjdf",
+      "id": 2
     }
   ]
 }
